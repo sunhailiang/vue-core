@@ -1,7 +1,7 @@
 <template>
   <div id="parent">
     parent：{{money}}
-    <Son1 :value="money"/>
+    <Son1 :value="money" @input="getChildVal"/>
   </div>
 </template>
 <script>
@@ -13,6 +13,11 @@ export default {
     return {
       money: 100
     };
+  },
+  methods:{
+    getChildVal(data){
+      this.money=data
+    }
   }
 };
 </script>
